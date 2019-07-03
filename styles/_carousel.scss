@@ -104,15 +104,17 @@
         .carousel-inner {
             .intro-text {
                 top: 50%;
+
+                .intro-heading {
+                    font-size: 25px;
+                    line-height: normal;
+                }
+
+                .intro-body {
+                    font-size: 16px;
+                }
             }
         }
     }
 }
 
-@media(min-width:768px) {
-    .header-carousel {
-        #particles-js {
-            min-height: 800px;
-        }
-    }
-}
