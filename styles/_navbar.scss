@@ -1,0 +1,116 @@
+﻿// _partial: NavBar
+@import 'Palette';
+
+#mainNav {
+    min-height: 56px;
+    background-color: $theme_gray;
+    border: none;
+
+    #navbar-logo {
+        max-height: 50px;
+    }
+
+    .navbar-toggler {
+        font-size: 80%;
+        padding: 0.75rem;
+        color: white;
+        border: 1px solid white;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    .navbar-brand {
+        color: white;
+        font-weight: 700;
+        padding: .9rem 0;
+        border: none;
+    }
+
+    .navbar-nav {
+        .nav-item {
+            &:hover {
+                color: fade(white, 80%);
+                outline: none;
+                background-color: transparent;
+            }
+
+            &:active,
+            &:focus {
+                outline: none;
+                background-color: transparent;
+            }
+
+            .nav-link {
+                &:focus {
+                    background: none;
+                }
+
+                &.active {
+                    color: white;
+                    font-weight: 900;
+                    border-bottom: 0.25rem solid rgba(255, 255, 255, 0.6);
+                }
+            }
+        }
+    }
+
+    @media (min-width: 992px) {
+        padding-top: 0;
+        padding-bottom: 0;
+        border-bottom: none;
+        background-color: transparent;
+        transition: background-color 0.3s ease-in-out;
+
+        .navbar-brand {
+            padding: .5rem 0;
+            color: fade-out(white, .5);
+        }
+
+        .nav-link {
+            transition: none;
+            padding: 2rem 1.5rem;
+            color: fade-out(white, .5);
+            border: none;
+
+            &:hover {
+                color: fade-out(white, .25);
+                background: none;
+            }
+
+            &:active {
+                color: white;
+            }
+        }
+
+        &.navbar-shrink {
+            background-color: $theme_gray;
+
+            .navbar-brand {
+                color: white;
+            }
+
+            .nav-link {
+                color: rgba(255, 255, 255, 0.6);
+                padding: 1.5rem 1.5rem 1.25rem;
+                border-bottom: 0.25rem solid transparent;
+
+                &:hover {
+                    color: white;
+                    background: none;
+                }
+
+                &:active {
+                    color: darken(white, 15%);
+                }
+
+                &.active {
+                    color: white;
+                    outline: none;
+                    border-bottom: 0.25rem solid rgba(255, 255, 255, 0.6);
+                }
+            }
+        }
+    }
+}

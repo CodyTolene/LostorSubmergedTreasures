@@ -1,0 +1,14 @@
+﻿// _partial: Footer
+@import 'Typography';
+@import 'Palette';
+
+footer {
+    padding-top: 15px;
+    padding-bottom: 5px;
+    background-color: white !important;
+
+    a {
+        color: black!important;
+        font-weight: 800;
+    }
+}

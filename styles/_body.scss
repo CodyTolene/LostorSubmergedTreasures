@@ -4,3 +4,8 @@
 body {
     font-family: $font-family-opensans;
 }
+
+.filler {
+    border-bottom: 1px solid black;
+    min-height: 888px;
+}
