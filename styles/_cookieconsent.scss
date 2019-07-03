@@ -4,36 +4,3 @@
 
 // Main
 @import '../node_modules/cookieconsent/build/cookieconsent.min';
-
-// Cookie consent overrides
-a {
-    // Basic href link
-    &.cc-link {
-        color: $blue_azure !important;
-    }
-
-    // Button
-    &.cc-btn {
-        color: $black !important;
-        font-weight: bold;
-        background-color: $blue_azure !important;
-        border: 1px solid $blue_dark;
-        font-family: $font-family-opensans;
-
-        &:hover {
-            color: $black;
-            background-color: $blue_dark !important;
-            text-shadow: 0 0 3px $theme_gray !important;
-            text-decoration: none !important
-        }
-
-        &:focus,
-        &:active,
-        &:visited,
-        &:not(:disabled):not(.disabled):active:focus {
-            color: $black;
-            outline: none;
-            box-shadow: none;
-        }
-    }
-}

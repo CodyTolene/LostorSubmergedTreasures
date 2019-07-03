@@ -6,6 +6,7 @@ var concat = require('gulp-concat');
 var rename = require('gulp-rename');
 var sass = require('gulp-sass');
 var uglify = require('gulp-uglify');
+var react = require('gulp-react');
 var del = require('del');
 sass.compiler = require('node-sass');
 
@@ -15,8 +16,8 @@ sass.compiler = require('node-sass');
  * This function takes all JS within '~/scripts' and compiles them into '~/www/scripts/dist'.
  * 
  * Files will be suffixed with '.dev' or '.min' depending on 'isProduction'.
- * if(!isProduction) = On completion, your site scripts are ready to be tested using development files (!minified & !uglified).
- * if(isProduction)  = On completion, your site scripts will be production ready (minified & uglified).
+ * if(!isProduction) = On completion, site scripts are ready to be tested using development files (!minified & !uglified).
+ * if(isProduction)  = On completion, site scripts will be production ready (minified & uglified).
  */
 async function compileNewScripts(isProduction) {
     console.log(`${await getCurrentTime()} Compiling '~/scripts' into 'www/scripts/dist' suffixed with '.${isProduction ? 'min' : 'dev'}'.`);
@@ -34,13 +35,39 @@ async function compileNewScripts(isProduction) {
 }
 
 /**
+ * COMPILE REACT SCRIPTS
+ *
+ * This function takes all React js within '~/react' and compiles them into '~/www/react/dist'.
+ *
+ * Files will be suffixed with '.dev' or '.min' depending on 'isProduction'.
+ * if(!isProduction) = On completion, site react scripts are ready to be tested using development files (!minified & !uglified).
+ * if(isProduction)  = On completion, site react scripts will be production ready (minified & uglified).
+ */
+async function compileNewReactScripts(isProduction) {
+    console.log(`${await getCurrentTime()} Compiling '~/react' into 'www/react/dist' suffixed with '.${isProduction ? 'min' : 'dev'}'.`);
+    if (isProduction) {
+        return await gulp.src('react/**/*.js')
+            .pipe(react()
+                .on('error', function (e) { console.log(e); }))
+            .pipe(rename({ suffix: '.min' }))
+            .pipe(gulp.dest('www/react/dist'));
+    } else {
+        return await gulp.src('react/**/*.js')
+            .pipe(react()
+                .on('error', function (e) { console.log(e); }))
+            .pipe(rename({ suffix: '.dev' }))
+            .pipe(gulp.dest('www/react/dist'));
+    }
+}
+
+/**
  * COMPILE STYLES
  * 
  * This function takes all SCSS within '~/styles' and compiles them into '~/www/styles/dist'.
  * 
  * Files will be suffixed with '.dev' or '.min' depending on 'isProduction'.
- * if(!isProduction) = On completion, your site styles are ready to be tested using development files (!minified).
- * if(isProduction)  = On completion, your site styles will be production ready (minified).
+ * if(!isProduction) = On completion, site styles are ready to be tested using development files (!minified).
+ * if(isProduction)  = On completion, site styles will be production ready (minified).
  */
 async function compileNewStyles(isProduction) {
     console.log(`${await getCurrentTime()} Compiling '~/styles' into 'www/styles/dist' suffixed with '.${isProduction ? 'min' : 'dev'}'.`);
@@ -67,6 +94,18 @@ async function removeOldScripts() {
     console.log(`${await getCurrentTime()} Deleting all '.min' & '.dev' files within '~/www/scripts/dist'`);
     return await del([
         'www/scripts/dist/**/*.js'
+    ]);
+}
+
+/**
+ * REMOVE OLD REACT SCRIPTS
+ * 
+ * This function removes all previously compiled React '.dev' and '.min' files from '~/www/react/dist'.
+ */
+async function removeOldReactScripts() {
+    console.log(`${await getCurrentTime()} Deleting all '.min' & '.dev' files within '~/www/react/dist'`);
+    return await del([
+        'www/react/dist/**/*.js'
     ]);
 }
 
@@ -104,6 +143,8 @@ gulp.task('Development', async function() {
     return await [ 
         await removeOldScripts(), 
         await compileNewScripts(false),
+        await removeOldReactScripts(),
+        await compileNewReactScripts(false),
         await removeOldStyles(),
         await compileNewStyles(false)
     ];
@@ -120,6 +161,8 @@ gulp.task('Production', async function() {
     return await [ 
         await removeOldScripts(), 
         await compileNewScripts(true),
+        await removeOldReactScripts(),
+        await compileNewReactScripts(true),
         await removeOldStyles(), 
         await compileNewStyles(true)
     ];
@@ -134,7 +177,8 @@ gulp.task('Production', async function() {
 gulp.task('Auto-Compile-Development', async function() {
     console.log(`${await getCurrentTime()} Auto-Compile-Development task initiated. See 'gulpfile.js' for process definitions.`);
     gulp.watch(['scripts/**/*.js'], async function () { return await [ await removeOldScripts(), await compileNewScripts(false) ];});
-    gulp.watch(['styles/**/*.scss'], async function () { return await [ await removeOldStyles(), await compileNewStyles(false) ];});
+    gulp.watch(['styles/**/*.scss'], async function () { return await [await removeOldStyles(), await compileNewStyles(false)]; });
+    gulp.watch(['react/**/*.js'], async function () { return await [await removeOldReactScripts(), await compileNewReactScripts(false)]; });
 });
 
  /**
@@ -146,5 +190,6 @@ gulp.task('Auto-Compile-Development', async function() {
 gulp.task('Auto-Compile-Production', async function() {
     console.log(`${await getCurrentTime()} Auto-Compile-Production task initiated. See 'gulpfile.js' for process definitions.`);
     gulp.watch(['scripts/**/*.js'], async function () { return await [ await removeOldScripts(), await compileNewScripts(true) ];});
-    gulp.watch(['styles/**/*.scss'], async function () { return await [ await removeOldStyles(), await compileNewStyles(true) ];});
+    gulp.watch(['styles/**/*.scss'], async function () { return await [await removeOldStyles(), await compileNewStyles(true)]; });
+    gulp.watch(['react/**/*.js'], async function () { return await [await removeOldReactScripts(), await compileNewReactScripts(true)]; });
 });

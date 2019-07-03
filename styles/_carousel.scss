@@ -4,8 +4,8 @@
 
 .header-carousel {
     text-align: center;
-    color: $white;
-    background-color: $black;
+    color: white;
+    background-color: black;
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-position: center center;
@@ -29,7 +29,7 @@
             top: 45%;
             right: 50%;
             transform: translate(50%,-50%);
-            color: $white;
+            color: white;
             max-width: 90%;
             padding: 1em 2em;
             background: rgba(255, 255, 255, 0.1);
@@ -47,7 +47,7 @@
 
             .intro-body {
                 font-size: 22px;
-                color: $white;
+                color: white;
                 font-family: $font-family-opensans;
                 //margin-bottom: 25px;
             }
@@ -58,7 +58,7 @@
                 display: inline-block;
                 position: relative;
                 top: 35%;
-                color: $white;
+                color: white;
                 font-size: 2em;
             }
 
