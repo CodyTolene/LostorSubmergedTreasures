@@ -1,4 +1,5 @@
-# [Lost or Submerged Treasures (L.O.S.T.) website.](https://www.lostorsubmergedtreasures.com)
+#  Lost or Submerged Treasures (L.O.S.T.) website.
+##([lost.business](https://www.lostorsubmergedtreasures.com))
 
 ## Resources, References & Technologies Used
 - [x] [Bootstrap](https://getbootstrap.com/) (v4.3.1)
@@ -16,7 +17,11 @@
 - [x] [jQuery](https://jquery.com/) (v3.4.0)
 - [x] [Node.js](https://nodejs.org/en/)
 - [x] [Pexels](https://www.pexels.com) (Motion Video Headers)
+- [x] [React.js](https://reactjs.org/)
 - [x] [Ruby](https://www.ruby-lang.org/en/)
 - [x] [Ruby on Rails](https://rubyonrails.org/)
 - [x] [Sass](https://sass-lang.com/)
+- [x] [TypeScript](https://www.typescriptlang.org/)
 - [x] [Varnish](http://varnish-cache.org/)
+- [x] [Webpack](https://webpack.js.org/)
+- [x] [Webpack CLI](https://webpack.js.org/api/cli/)
