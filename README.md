@@ -1,5 +1,4 @@
-#  Lost or Submerged Treasures (L.O.S.T.) website.
-##([lost.business](https://www.lostorsubmergedtreasures.com))
+# Lost or Submerged Treasures (L.O.S.T.) website. ([View](https://www.lostorsubmergedtreasures.com))
 
 ## Resources, References & Technologies Used
 - [x] [Bootstrap](https://getbootstrap.com/) (v4.3.1)
