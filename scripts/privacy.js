@@ -9,8 +9,8 @@
                 "text": "#ffffff"
             },
             "button": {
-                "background": "#98d049",
-                "text": "#000000"
+                "background": "#e9ecef",
+                "text": "#272B30"
             }
         },
         "theme": "classic",

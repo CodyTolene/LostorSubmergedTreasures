@@ -32,6 +32,8 @@
     "bootstrap": "4.3.1",
     "jquery": "3.4.1",
     "jquery.easing": "1.4.1",
+    "material-components-web": "^3.0.0",
+    "material-design-icons": "^3.0.0",
     "popper.js": "1.15.0",
     "lodash": "^4.17.11",
     "react": "16.8.6",

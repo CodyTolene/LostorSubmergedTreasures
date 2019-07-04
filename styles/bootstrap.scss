@@ -1,3 +1,8 @@
 @import 'Variables';
 @import '../node_modules/bootstrap/scss/bootstrap';
-@import 'Bootswatch';
+
+// Overrides
+
+/*.card-title {
+    color: white;
+}*/

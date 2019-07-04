@@ -4,3 +4,15 @@
 
 // Main
 @import '../node_modules/cookieconsent/build/cookieconsent.min';
+
+.cc-btn {
+    &:active {
+        color: rgb(39, 43, 48) !important;
+        background-color: rgb(233, 236, 239) !important;
+        border-color: transparent !important;
+    }
+
+    &:focus {
+        box-shadow: 0 0 0 0.2rem rgba(58,63,68,0.25) !important;
+    }
+}

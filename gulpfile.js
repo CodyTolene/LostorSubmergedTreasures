@@ -109,9 +109,7 @@ async function getCurrentTime() {
 
 /**
  * Compile
- * 
- * CLI:
- * $gulp Compile
+ * CLI: $gulp Compile
  */
 gulp.task('Compile', async function() {
     console.log(`${await getCurrentTime()} Compile task initiated. See 'gulpfile.js' for process definitions.`);
@@ -127,9 +125,7 @@ gulp.task('Compile', async function() {
 
  /**
  * Auto-Compile
- * 
- * CLI:
- * $gulp Auto-Compile
+ * CLI: $gulp Auto-Compile
  */
 gulp.task('Auto-Compile', async function() {
     console.log(`${await getCurrentTime()} Auto-Compile task initiated. See 'gulpfile.js' for process definitions.`);
