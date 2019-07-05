@@ -15,7 +15,8 @@
         max-height: 900px;
 
         video {
-            width: 100%;
+            width: auto;
+            height: 100%;
             max-height: 100%;
             opacity: 0.5;
         }
@@ -106,12 +107,12 @@
                 top: 50%;
 
                 .intro-heading {
-                    font-size: 25px;
+                    /*font-size: 25px;*/
                     line-height: normal;
                 }
 
                 .intro-body {
-                    font-size: 16px;
+                    /*font-size: 16px;*/
                 }
             }
         }

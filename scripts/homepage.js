@@ -56,4 +56,28 @@
 
     document.getElementById('video-1').play();
     document.getElementById('video-2').play();
+
+    var windowWidth = $(window).width();
+    var isMobile = $(window).width() <= 992;
+
+    $(window).on('resize', function(event) {
+        if (windowWidth == $(window).width()) {
+            return;
+        }
+        windowWidth = $(window).width();
+        var isMobileAfterResize = $(window).width() <= 992;
+        if ((isMobileAfterResize && !isMobile) || (!isMobileAfterResize && isMobile)) {
+            isMobileAfterResize ? updateCarouselRatio(true) : updateCarouselRatio(false);
+        }
+        isMobile = isMobileAfterResize;
+    });
+
+    var updateCarouselRatio = function (mobileView) {
+        //console.log('Set video to ' + (mobileView ? 'mobile' : 'pc') + ' view!');
+        $(mobileView ? '.embed-responsive-16by9' : '.embed-responsive-1by1')
+            .removeClass(mobileView ? 'embed-responsive-16by9' : 'embed-responsive-1by1')
+            .addClass(mobileView ? 'embed-responsive-1by1' : 'embed-responsive-16by9');
+    }
+    updateCarouselRatio(isMobile);
+
 })(jQuery);
