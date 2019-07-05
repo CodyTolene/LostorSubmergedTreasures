@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+      "baseUrl": ".",
+      "paths": { "*": ["types/*"] },
     "outDir": "./www/react/",
     "sourceMap": true,
     "noImplicitAny": true,
@@ -14,5 +16,5 @@
     "**/node_modules",
     "**/obj",
     "**/platforms"
-  ]
+  ],
 }

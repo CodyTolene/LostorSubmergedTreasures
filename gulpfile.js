@@ -131,5 +131,5 @@ gulp.task('Auto-Compile', async function() {
     console.log(`${await getCurrentTime()} Auto-Compile task initiated. See 'gulpfile.js' for process definitions.`);
     gulp.watch(['scripts/**/*.js'], async function () { return await [ await removeOldScripts(), await compileNewScripts() ];});
     gulp.watch(['styles/**/*.scss'], async function () { return await [await removeOldStyles(), await compileNewStyles()]; });
-    gulp.watch(['react/**/*.tsx'], async function () { return await [await removeOldReactScripts(), await compileNewReactScripts()]; });
+    gulp.watch(['react/**/*.tsx', 'react/**/*.ts'], async function () { return await [await removeOldReactScripts(), await compileNewReactScripts()]; });
 });
