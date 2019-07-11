@@ -1,0 +1,32 @@
+﻿// _partial: YouTube
+@import 'Palette';
+
+#youtube-videos {
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    .list-group-item {
+        &:hover {
+            cursor: pointer;
+        }
+
+        .media-head {
+            h5 {
+                color: #AAAAAA;
+            }
+        }
+    }
+
+
+    .card {
+        .card-body {
+            .card-title {
+                color: $theme_text_light;
+            }
+
+            .card-text {
+                color: #AAAAAA;
+            }
+        }
+    }
+}
