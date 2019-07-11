@@ -6,6 +6,7 @@ const VideoList = (prop: { videos: IVideo[], onVideoSelect: any }) => {
     if (!prop.videos) {
         return <div>Loading...</div>;
     }
+
     const videoItems = prop.videos.map((video: IVideo) => {
         return (
             <VideoItem
@@ -17,7 +18,7 @@ const VideoList = (prop: { videos: IVideo[], onVideoSelect: any }) => {
     });
 
     return (
-        <ul className="col-12 col-md-4 list-group p-2">
+        <ul className="col-12 col-xl-4 list-group p-2">
             {videoItems}
         </ul>
     );

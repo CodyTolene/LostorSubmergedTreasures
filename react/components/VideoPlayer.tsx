@@ -11,7 +11,7 @@ const VideoPlayer = (prop: { video: IVideo, channelId: string }) => {
     const channelUrl = `https://www.youtube.com/channel/${prop.channelId}`;
 
     return (
-        <div className="col-12 col-md-8 p-2">
+        <div className="col-12 col-xl-8 p-2">
             <div className="card">
                 <div className="embed-responsive embed-responsive-16by9">
                     <iframe className="embed-responsive-item" src={embedUrl}></iframe>
@@ -20,7 +20,7 @@ const VideoPlayer = (prop: { video: IVideo, channelId: string }) => {
                     <h3 className="card-title">{prop.video.snippet.title}</h3>
                     <p className="card-text">{prop.video.snippet.description}</p>
                     <div className="row">
-                        <div className="col-12 col-md-6">
+                        <div className="col-12 col-md-6 mb-1 mb-sm-0">
                             <a href={viewUrl}
                                 target="_blank"
                                 rel="nofollow noopener noreferrer"
