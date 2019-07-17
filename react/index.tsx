@@ -6,7 +6,7 @@ import { IState } from "./types/IState";
 import VideoList from "./components/VideoList";
 
 const APIKey: string = 'AIzaSyBeM5EFRSBeBsqKzT9mMr9uSNNcIeYCprA';
-const channelId: string = 'UCzQUP1qoWDoEbmsQxvdjxgQ'; // Joe Rogan (testing)
+const channelId: string = 'UCn7MwsErFsHkrXYxb2EMtUw'; // https://www.youtube.com/channel/UCn7MwsErFsHkrXYxb2EMtUw
 const maxResults: number = 5;
 
 class App extends React.Component {
